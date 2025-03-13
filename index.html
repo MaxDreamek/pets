@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <section class="main_section">
+        <table>
+            <tr>
+            <th>Name</th>
+            <th>Dead</th>
+            <th>Resp Time</th>
+            <th>Time to Rest Left</th>
+            <th>Status</th>
+            </tr>
+            <tr>
+            <td id="col_1">Vive</td>
+            <td id="col_2"><input type="time" step="1" id="col2"></td>
+            <td id="col_3"></td> <!-- col2+6h -->
+            <td id="col_4"></td> <!-- кол 3 - текущее время компа (должен быть таймером который идти будет к 0)-->
+            <td id="col_5"></td> <!-- кол 3 = кол 4 || время сейчас < col 3 + 2h = В ресе -->
+            </tr>
+        </table>
+
+        <button id="save-button">Сохранить</button>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
