@@ -65,7 +65,7 @@ function startTimer(row) {
         }
 
         col4.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'Пусто' : 'В ресе';
+        col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'В ресе' : 'Пусто';
     }
 
     // Запускаем таймер только если в `col4` есть время
