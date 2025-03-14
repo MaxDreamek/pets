@@ -60,3 +60,18 @@
     width: fit-content;
 
   }
+  .col6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .col6 button{
+    color: #ffffff;
+    background-color: transparent;
+    font-size: 16px;
+    border: 2px solid #858e99;
+    padding: 5px;
+    border-radius: 5px;
+
+  }

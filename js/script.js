@@ -33,6 +33,7 @@ function loadData() {
 }
 
 function startTimer(row) {
+    const col3 = row.querySelector('.col3');
     const col4 = row.querySelector('.col4');
     const col5 = row.querySelector('.col5');
 
@@ -63,14 +64,11 @@ function startTimer(row) {
             seconds = 59;
         }
 
-        col4.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        col4.textContent = `${(hours || 0).toString().padStart(2, '0')}:${(minutes || 0).toString().padStart(2, '0')}:${(seconds || 0).toString().padStart(2, '0')}`;
+        const col3Value = new Date(col3.textContent);
+        const col5Value = (new Date().getTime() < (col3Value.getTime() + (2 * 60 * 60 * 1000))); 
 
-        if(hours === 0 && minutes === 0 && seconds === 0){
-          col5.textContent = 'В ресе'
-        }else{
-          col5.textContent = 'Пусто'
-        }
-        // col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'В ресе' : 'Пусто';
+        col5.textContent = col5Value ? 'В ресе' : 'Пусто';
     }
 
     if (!col4.textContent.startsWith('00:00:00')) {
@@ -141,3 +139,21 @@ saveButton.addEventListener('click', () => {
 
 loadData();
 rows.forEach(startTimer);
+
+document.querySelectorAll('.resset').forEach(button => {
+    button.addEventListener('click', function () {
+        const row = this.closest('.column');
+
+        row.querySelector('.col2-input').value = ''; 
+        row.querySelector('.col3').textContent = ''; 
+        row.querySelector('.col4').textContent = ''; 
+        row.querySelector('.col5').textContent = '';
+
+        if (timers.has(row)) {
+            clearInterval(timers.get(row));
+            timers.delete(row);
+        }
+
+        saveData();
+    });
+});
