@@ -64,7 +64,13 @@ function startTimer(row) {
         }
 
         col4.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'В ресе' : 'Пусто';
+
+        if(hours === 0 && minutes === 0 && seconds === 0){
+          col5.textContent = 'В ресе'
+        }else{
+          col5.textContent = 'Пусто'
+        }
+        // col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'В ресе' : 'Пусто';
     }
 
     if (!col4.textContent.startsWith('00:00:00')) {
