@@ -36,7 +36,6 @@ function startTimer(row) {
     const col4 = row.querySelector('.col4');
     const col5 = row.querySelector('.col5');
 
-    // Удаляем старый таймер, если он есть
     if (timers.has(row)) {
         clearInterval(timers.get(row));
         timers.delete(row);
@@ -47,8 +46,8 @@ function startTimer(row) {
         let [hours, minutes, seconds] = timeParts;
 
         if (hours === 0 && minutes === 0 && seconds === 0) {
-            col5.textContent = 'Пусто';
-            clearInterval(timers.get(row)); // Останавливаем таймер
+            col5.textContent = 'В ресе';
+            clearInterval(timers.get(row));
             timers.delete(row);
             return;
         }
@@ -68,7 +67,6 @@ function startTimer(row) {
         col5.textContent = (hours === 0 && minutes === 0 && seconds === 0) ? 'В ресе' : 'Пусто';
     }
 
-    // Запускаем таймер только если в `col4` есть время
     if (!col4.textContent.startsWith('00:00:00')) {
         const timerId = setInterval(updateTimer, 1000);
         timers.set(row, timerId);
