@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main_section{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    cursor: pointer;
+    height: 100vh;
+    background-image: url('../img/755.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th{
+    background-color: #292d33;
+    padding: 8px;
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 2px solid  #858e99;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+  }
+   td {
+    border-style: dotted;
+    padding: 10px 20px;
+    stroke: none;
+    font-weight: inherit;
+    position: relative;
+    border-color: #858e99;
+    border-width: 1px;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #000000;
+    font-family: "Inter", sans-serif;
+  }
+  input{
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+  }
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+  #save-button{
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 20px;
+    width: fit-content;
+
+  }
